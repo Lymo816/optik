@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2A2FE0">
+<meta name="description" content="OPTIK, atelier de lunettes de vue et de soleil à Paris, sur rendez-vous. Six montures en petite série, essayées et ajustées sur place.">
+<title>OPTIK — Six montures, atelier de lunettes à Paris</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 32'%3E%3Cg fill='none' stroke='%232A2FE0' stroke-width='5'%3E%3Ccircle cx='16' cy='16' r='12'/%3E%3Ccircle cx='48' cy='16' r='12'/%3E%3Cpath d='M28 14q4-4 8 0'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="logo" viewBox="0 0 178 40"><g fill="none" stroke="currentColor" stroke-width="7"><circle cx="20" cy="20" r="16.5"/><path d="M56 38V3h14a11.5 11.5 0 0 1 0 23H56M84 3h30M99 3v35M127 3v35M143 3v35M169 3l-26 19M153 16l18 22"/></g></symbol></svg>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="bar">
+  <a class="logo" href="#accueil" aria-label="OPTIK, accueil"><svg viewBox="0 0 178 40"><use href="#logo"/></svg></a>
+  <button class="menu" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav" aria-label="Navigation principale">
+    <a href="#montures">Les montures</a><a href="#atelier">L'atelier</a><a href="#rendez-vous">Rendez-vous</a>
+  </nav>
+  <div class="tools"><button type="button" id="favs-btn">Gardées <b class="fav-n">0</b></button><button type="button" id="cart-btn">Panier <b class="cart-n">0</b></button></div>
+</header>
+
+<main id="contenu">
+<section class="hero" id="accueil" aria-labelledby="h1">
+  <div class="hero-copy">
+    <h1 id="h1">Six montures, choisies une par une.</h1>
+    <p>OPTIK est un atelier de lunettes de vue et de soleil à Paris, sur rendez-vous. Peu de modèles, tous essayables, tous ajustés à votre visage avant que vous repartiez.</p>
+    <div class="cta"><a class="btn sun" href="#montures">Voir les six montures</a><a class="btn ghost" href="#rendez-vous">Prendre rendez-vous</a></div>
+  </div>
+  <button class="hero-art" type="button" id="hero-art" aria-label="Voir la fiche de Rumeur 04"></button>
+  <div class="hero-doors">
+    <a href="#montures" data-cat="vue"><span>Lunettes de vue</span><small id="n-vue"></small></a>
+    <a href="#montures" data-cat="soleil"><span>Lunettes de soleil</span><small id="n-soleil"></small></a>
+  </div>
+</section>
+
+<section class="shop" id="montures" aria-labelledby="h-shop">
+  <div class="shop-head">
+    <h2 id="h-shop">Les montures</h2>
+    <p>Prix TTC. Collection fictive : rien ici ne s'achète vraiment.</p>
+  </div>
+  <div class="filters">
+    <div class="seg" role="group" aria-label="Type de lunettes">
+      <button type="button" data-c="all" aria-pressed="true">Toutes</button><button type="button" data-c="vue" aria-pressed="false">Vue</button><button type="button" data-c="soleil" aria-pressed="false">Soleil</button>
+    </div>
+    <label><span class="sr">Forme</span><select id="f-shape"><option value="all">Toutes les formes</option><option value="pantos">Pantos</option><option value="rectangulaire">Rectangulaire</option><option value="papillon">Papillon</option><option value="aviateur">Aviateur</option><option value="ronde">Ronde</option></select></label>
+    <label><span class="sr">Matière</span><select id="f-mat"><option value="all">Toutes les matières</option><option value="acétate">Acétate</option><option value="métal">Métal</option><option value="mixte">Mixte</option></select></label>
+    <label><span class="sr">Trier</span><select id="f-sort"><option value="featured">Notre ordre</option><option value="price-asc">Prix croissant</option><option value="price-desc">Prix décroissant</option><option value="name">Nom A–Z</option></select></label>
+    <label class="search"><span class="sr">Rechercher une monture</span><input id="f-q" type="search" placeholder="Rechercher : ronde, olive…" autocomplete="off"></label>
+  </div>
+  <p class="count" id="count" aria-live="polite"></p>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" hidden><p id="empty-txt"></p><button class="btn blue" type="button" id="reset">Réinitialiser les filtres</button></div>
+</section>
+
+<section class="atelier" id="atelier" aria-labelledby="h-at">
+  <h2 id="h-at">À l'atelier, on règle ce qui compte.</h2>
+  <div class="services">
+    <div><h3>Essayage</h3><p>Les six modèles, dans tous leurs coloris, regardés à la lumière du jour. On vous dit franchement quand une forme ne vous va pas.</p></div>
+    <div><h3>Ajustement</h3><p>Plaquettes remises d'aplomb, branches serrées derrière l'oreille, vis resserrées. Pour toute monture, achetée chez nous ou non.</p></div>
+    <div><h3>Entretien</h3><p>Nettoyage, remplacement de plaquettes et petites réparations pour garder une paire longtemps.</p></div>
+  </div>
+  <p class="note">Services de démonstration : disponibilités et tarifs fictifs.</p>
+</section>
+
+<section class="rdv" id="rendez-vous" aria-labelledby="h-rdv">
+  <div>
+    <h2 id="h-rdv">Venez les essayer.</h2>
+    <p>Choisissez un créneau, on prépare les modèles qui vous intéressent. L'atelier est ouvert du mardi au samedi, de 10 h 30 à 19 h.</p>
+    <address>18, rue des Trois Bornes<br>75011 Paris<br><a href="mailto:bonjour@optik-atelier.fr">bonjour@optik-atelier.fr</a></address>
+    <p class="note">Adresse et horaires fictifs.</p>
+  </div>
+  <form id="form" novalidate>
+    <label for="b-name">Nom</label><input id="b-name" name="name" autocomplete="name" required minlength="2">
+    <label for="b-mail">E-mail</label><input id="b-mail" name="email" type="email" autocomplete="email" required>
+    <label for="b-svc">Je viens pour</label>
+    <select id="b-svc" name="service" required><option value="">Choisir</option><option>Essayer des montures</option><option>Faire ajuster mes lunettes</option><option>Un entretien ou une réparation</option></select>
+    <div class="two"><div><label for="b-date">Jour</label><input id="b-date" name="date" type="date" required></div>
+    <div><label for="b-time">Heure</label><select id="b-time" name="time" required><option value="">Choisir</option><option>10:30</option><option>11:30</option><option>14:00</option><option>15:00</option><option>16:30</option><option>17:30</option></select></div></div>
+    <p class="err" id="b-err" role="alert" hidden></p>
+    <button class="btn sun" type="submit">Demander ce créneau</button>
+    <p class="note">Démonstration : la demande n'est envoyée à personne.</p>
+    <p class="ok" id="b-ok" role="status" hidden></p>
+  </form>
+</section>
+</main>
+
+<footer>
+  <a class="logo" href="#accueil" aria-label="OPTIK, retour en haut"><svg viewBox="0 0 178 40"><use href="#logo"/></svg></a>
+  <nav aria-label="Pied de page"><a href="#montures">Les montures</a><a href="#atelier">L'atelier</a><a href="#rendez-vous">Rendez-vous</a><a href="mailto:bonjour@optik-atelier.fr">Écrire</a></nav>
+  <p>Marque, produits et boutique fictifs. Projet de portfolio de Lymo.</p>
+</footer>
+
+<div class="veil" id="veil" hidden></div>
+<aside class="cart" id="cart" role="dialog" aria-modal="true" aria-labelledby="cart-h" hidden>
+  <div class="panel-top"><h2 id="cart-h">Panier</h2><button type="button" class="x" data-close>Fermer</button></div>
+  <div id="cart-lines"></div>
+  <div class="cart-foot"><p class="total"><span>Total TTC</span><strong id="total">0 €</strong></p><p class="note">Démonstration : aucune commande ni aucun paiement n'est possible.</p><button class="btn blue" type="button" id="checkout">Finaliser (démo)</button></div>
+</aside>
+<section class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="s-name" hidden>
+  <button type="button" class="x" data-close>Fermer</button>
+  <div class="s-art"><div class="s-img" id="s-img"></div><div class="seg" role="group" aria-label="Vue de la monture"><button type="button" data-v="f" aria-pressed="true">Face</button><button type="button" data-v="d" aria-pressed="false">Détail du pont</button></div></div>
+  <div class="s-info">
+    <h2 id="s-name"></h2><p class="s-price" id="s-price"></p><p id="s-desc"></p>
+    <dl id="s-specs"></dl>
+    <fieldset><legend>Coloris : <span id="s-cname"></span></legend><div id="s-swatches"></div></fieldset>
+    <div class="cta"><button class="btn blue" type="button" id="s-add">Ajouter au panier</button><button class="btn ghost-d" type="button" id="s-fav"></button></div>
+  </div>
+</section>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
