@@ -1,0 +1,30 @@
+import "./globals.css";
+
+export const metadata = {
+  title: "OPTIK — Six montures, atelier de lunettes à Paris",
+  description:
+    "OPTIK, atelier fictif de lunettes de vue et de soleil à Paris. Six montures en petite série, essayées et ajustées sur place.",
+  icons: {
+    icon: "/favicon.svg",
+  },
+};
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="fr">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Instrument+Sans:wght@400;500;600&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body>{children}</body>
+    </html>
+  );
+}
