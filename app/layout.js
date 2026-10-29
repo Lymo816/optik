@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "OPTIK — Six montures, atelier de lunettes à Paris",
+  title: "OPTIK - Six montures, atelier de lunettes à Paris",
   description:
     "OPTIK, atelier fictif de lunettes de vue et de soleil à Paris. Six montures en petite série, essayées et ajustées sur place.",
   icons: {
